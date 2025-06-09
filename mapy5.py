@@ -1,26 +1,3 @@
-# Vytvořím strukturu projektu a upravený app.py pro uživatele
-import os
-
-project_path = "/mnt/data/zastavy_mapa_streamlit"
-
-os.makedirs(project_path, exist_ok=True)
-
-# requirements.txt obsahuje potřebné knihovny
-requirements = """\
-streamlit
-pandas
-openpyxl
-folium
-geopy
-matplotlib
-streamlit-folium
-"""
-
-with open(os.path.join(project_path, "requirements.txt"), "w") as f:
-    f.write(requirements)
-
-# app.py – upravený kód podle zadání uživatele s uploaderem místo pevných cest
-app_code = '''\
 import streamlit as st
 import folium
 from streamlit_folium import st_folium
@@ -158,9 +135,3 @@ if uploaded_file:
     st_folium(m, width=1100, height=600)
 else:
     st.info("📂 Nahraj prosím soubor 'podklad.xlsx' nebo již zpracovaný 'podklad_gps.xlsx'.")
-'''
-
-with open(os.path.join(project_path, "app.py"), "w", encoding="utf-8") as f:
-    f.write(app_code)
-
-project_path
