@@ -135,3 +135,26 @@ if uploaded_file:
     st_folium(m, width=1100, height=600)
 else:
     st.info("📂 Nahraj prosím soubor 'podklad.xlsx' nebo již zpracovaný 'podklad_gps.xlsx'.")
+
+
+# === FOOTER ===
+st.markdown(
+    """
+    <div style="text-align: center; margin-top: 40px;">
+        <a href="https://github.com/balage112" target="_blank">
+            <button style="
+                background-color: #1f77b4;
+                color: white;
+                border: none;
+                padding: 10px 25px;
+                font-size: 16px;
+                border-radius: 8px;
+                cursor: pointer;
+            ">
+                🚀 POWERED BY BALAGE
+            </button>
+        </a>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
